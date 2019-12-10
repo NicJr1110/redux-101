@@ -1,17 +1,8 @@
- import React from 'react';
- import ReactDOM from 'react-dom';
-// import './index.css';
- import App from './components/App';
-// import * as serviceWorker from './serviceWorker';
-
-//ReactDOM.render(<App />, document.getElementById('root'));
-
-// // If you want your app to work offline and load faster, you can change
-// // unregister() to register() below. Note this comes with some pitfalls.
-// // Learn more about service workers: https://bit.ly/CRA-PWA
-// serviceWorker.unregister();
-
-import { createStore } from "redux";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './components/App';
+import { createStore, compose } from "redux";
+import persistState from "redux-localstorage";
 
 const initial = {
     player1: 0,
@@ -27,7 +18,11 @@ const p1 = state => ({ ...state, player1: state.player1 + 1});
 
 const p2 = state => ({ ...state, player2: state.player2 + 1});
 
-const setServer = state => ({...state, server1: (Math.floor(((state.player1+state.player2)/5)%2))});
+const setServer = state => (
+    state.player1 + state.player2 < 40 ? 
+    {...state, server1: (Math.floor(((state.player1+state.player2)/5)%2))} : 
+    {...state, server1: (Math.floor(((state.player1+state.player2)/2)%2))}
+    )
 
 const scoreDiff = state => ( Math.abs(state.player1 - state.player2))
 
@@ -78,11 +73,13 @@ const reducer = (state, action) => {
     }
 }
 
+const composeEnhancers =
+    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
     reducer,
     initial,
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-
+    composeEnhancers(persistState())
+   
 );
 
 const render = () => {
