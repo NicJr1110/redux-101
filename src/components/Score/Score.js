@@ -4,7 +4,7 @@ const Score = ({
     server,
     number,
     player,
-    endGame,
+    winner,
     handleClick,
 }) => (
     <div className="col-md-6 mt-4">
@@ -15,7 +15,7 @@ const Score = ({
                 <p className="card-text display-1">{ player }</p>
             </div>
             <div className="card-footer">
-                <button disabled={ endGame ? true : null } className="form-control btn btn-success" onClick={ handleClick }>+</button>
+                <button disabled={ winner ? true : null } className="form-control btn btn-success" onClick={ handleClick }>+</button>
             </div>
         </div>
     </div>

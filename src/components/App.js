@@ -1,20 +1,17 @@
 import React from "react";
-import Score from "./Score";
-import Winner from "./Winner";
 import ResetButton from "./ResetButton";
-import History from "./History";
+import History from "./History/index";
+import Player1 from "./Score/Player1";
+import Player2 from "./Score/Player2";
+import Winner from "./Winner/index";
+
 
 const App = ({
-    server1,
-    player1,
-    player2,
-    endGame,
     handleClickP1,
     handleClickP2,
-    winner1,
-    winner2,
     handleReset,
-    history,
+    handleResetTotal,
+    
 
 }) => (
     <React.Fragment>
@@ -25,16 +22,23 @@ const App = ({
 
         {/* scores */}
         <div className="row mb-4">
-            <Score server={ !server1 } number="1"  player={ player1 } endGame={ endGame } handleClick={ handleClickP1 } />
-            <Score server={ server1 } number="2"  player={ player2 } endGame={ endGame } handleClick={ handleClickP2 } />
+            <Player1 
+                number="1" 
+                handleClick={ handleClickP1 }
+            />
+            <Player2
+                number="2" 
+                handleClick={ handleClickP2 } 
+            />
         </div>
         { /* winner message */}
-        <Winner winner={ winner1 } number="1"/>
-        <Winner winner={ winner2 } number="2"/>
+        
+        <Winner />
 
         { /* reset button */}
-        <ResetButton handleClick={ handleReset }/>
-        <History games={ history } />
+        <ResetButton handleClick={ handleReset } text="Re-Match"/>
+        <History />
+        <ResetButton handleClick={ handleResetTotal } text="Reset All"/>
     </React.Fragment>
 );
 
