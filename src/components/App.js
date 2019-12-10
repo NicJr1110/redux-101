@@ -1,5 +1,6 @@
 import React from "react";
 import Score from "./Score";
+import Winner from "./Winner";
 
 const App = ({
     server1,
@@ -22,39 +23,13 @@ const App = ({
         {/* scores */}
         <div className="row mb-4">
             <Score server={ !server1 } number="1"  player={ player1 } endGame={ endGame } handleClick={ handleClickP1 } />
-            {/* <div className="col-md-6 mt-4">
-                <div className={ "card text-center" + (
-                  server1 ? " bg-dark text-white" : "") }>
-                    <h5 className="card-header">Player 1</h5>
-                    <div className="card-body">
-                        <p className="card-text display-1">{ player1 }</p>
-                    </div>
-                    <div className="card-footer">
-                        <button disabled={ endGame ? true : null } className="form-control btn btn-success" onClick={ handleClickP1 }>+</button>
-                    </div>
-                </div>
-            </div> */}
-
             <Score server={ server1 } number="2"  player={ player2 } endGame={ endGame } handleClick={ handleClickP2 } />
-            {/* <div className="col-md-6 mt-4">
-                <div className={ "card text-center" + (server1 ? "" : " bg-dark text-white") }>
-                    <h5 className="card-header">Player 2</h5>
-                    <div className="card-body">
-                        <p className="card-text display-1">{ player2 }</p>
-                    </div>
-                    <div className="card-footer">
-                        <button disabled={ endGame ? true : null } className="form-control btn btn-success" 
-                        
-                        onClick={ handleClickP2 } >+</button>
-                    </div>
-                </div>
-            </div> */}
         </div>
 
         { /* winner message */}
-        { winner1 ? <h2 className="alert alert-success">Player 1 wins!</h2> : null }
-        { winner2 ? <h2 className="alert alert-success">Player 2 wins!</h2> : null }
-        
+        <Winner winner={ winner1 } number="1"/>
+        <Winner winner={ winner2 } number="2"/>
+ 
 
         <hr />
 
