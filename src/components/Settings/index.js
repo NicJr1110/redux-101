@@ -1,20 +1,22 @@
 import { connect } from 'react-redux';
 import Settings from "./Settings";
+import { handleSubmitStart } from "../../data/actions"
 
-const mapStateToProps = ({ p1Name, p2Name,winningScore,alternateEvery }) => {
+const mapStateToProps = ({ p1Name, p2Name,winningScore,alternateEvery,gameStarted }) => {
     return {
         p1Name,
         p2Name,
         winningScore,
         alternateEvery,
+        gameStarted,
         
     }
 };
 
-// const mapDispatchToProps = dispatch => {
-//     return {
-//         handleClick: () => dispatch(handleClickP1()),
-//     };
-// };
+const mapDispatchToProps = dispatch => {
+    return {
+        handleSubmit: () => dispatch(handleSubmitStart()),
+    };
+};
 
-export default connect(mapStateToProps)(Settings);
+export default connect(mapStateToProps,mapDispatchToProps)(Settings);

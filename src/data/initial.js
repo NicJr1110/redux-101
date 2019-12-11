@@ -1,6 +1,6 @@
 const initial = {
-    p1Name: "ABC",
-    p2Name: "DEF",
+    p1Name: "",
+    p2Name: "",
     player1: 0,
     player2: 0,
     server1: 0,

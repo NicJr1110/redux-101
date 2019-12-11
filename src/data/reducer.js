@@ -52,6 +52,7 @@ const reducer = (state, action) => {
         case "addPointP2": return history(playerWin(setServer(p2(state))));
         case "reset": return {...initial, history: state.history};
         case "resetTotal": return {...initial};
+        case "startGame" : return {...initial, gameStarted: true};
         default: return state;
     }
 }

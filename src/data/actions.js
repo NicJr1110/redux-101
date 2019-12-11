@@ -21,3 +21,9 @@ export const handleResetTotal = () => {
         type: "resetTotal",
     };
 };
+
+export const handleSubmitStart = () => {
+    return {
+        type: "startGame",
+    }
+}
