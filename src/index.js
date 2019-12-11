@@ -18,16 +18,8 @@ const store = createStore(
 
 ReactDOM.render(
     <Provider store={ store }>
-        <App 
-            handleClickP1 = { () => store.dispatch({ type: "addPointP1" }) }
-            handleClickP2 = { () => store.dispatch({ type: "addPointP2" }) }
-            handleReset = { () => store.dispatch({ type: "reset" }) }
-            handleResetTotal = { () => store.dispatch({ type: "resetTotal"}) }
-        />
+        <App />
     </Provider>,
     document.getElementById("root")
 );
 
-
-// store.subscribe(render);
-// render();
