@@ -15,7 +15,7 @@ const mapStateToProps = ({ p1Name, p2Name,winningScore,alternateEvery,gameStarte
 
 const mapDispatchToProps = dispatch => {
     return {
-        handleSubmit: () => dispatch(handleSubmitStart()),
+        handleSubmitStart: (p1Name,p2Name,winningScore,alternateEvery) => dispatch(handleSubmitStart(p1Name,p2Name,winningScore,alternateEvery)),
     };
 };
 

@@ -18,6 +18,7 @@ class Settings extends Component{
         this.handleChangeP2Name = this.handleChangeP2Name.bind(this);
         this.handleWinningScore = this.handleWinningScore.bind(this);
         this.handleAlternateEvery = this.handleAlternateEvery.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
 
     }
 
@@ -45,16 +46,24 @@ class Settings extends Component{
         });
     }
 
+    handleSubmit(e){
+        e.preventDefault();
+
+        let { handleSubmitStart } = this.props;
+        let { p1Name, p2Name, winningScore, alternateEvery } = this.state;
+        handleSubmitStart(p1Name, p2Name, winningScore, alternateEvery);
+    }
+
 
     render(){
         let { p1Name, p2Name, winningScore, alternateEvery } = this.state;
-        let { handleSubmit, gameStarted } = this.props;
+        let { gameStarted } = this.props;
         return(
             <>
                 { gameStarted ? null :   
                 <div className ="container">
                     <h1> Setup Game </h1>
-                    <Form onSubmit={ handleSubmit }>
+                    <Form onSubmit={ this.handleSubmit }>
                         <Form.Group controlId="formGroupPlayer2">
                             <Form.Label>Player 1 Name</Form.Label>
                             <Form.Control 

@@ -6,16 +6,16 @@ const p1 = state => ({ ...state, player1: state.player1 + 1});
 const p2 = state => ({ ...state, player2: state.player2 + 1});
 
 const setServer = state => (
-    state.player1 + state.player2 < 40 ? 
-    {...state, server1: (Math.floor(((state.player1+state.player2)/5)%2))} : {...state, server1: (Math.floor(((state.player1+state.player2)/2)%2))} 
+    state.player1 + state.player2 < ((state.winningScore - 1)*2) ? 
+    {...state, server1: (Math.floor(((state.player1+state.player2)/state.alternateEvery)%2))} : {...state, server1: (Math.floor(((state.player1+state.player2)/2)%2))} 
 )
 
 const scoreDiff = state => ( Math.abs(state.player1 - state.player2))
 
 const playerWin = state => {
-    if (state.player1 >= 21 && (state.player1 > state.player2 && scoreDiff(state) >=2)){
+    if (state.player1 >= state.winningScore && (state.player1 > state.player2 && scoreDiff(state) >=2)){
         return {...state, winner: 1 }
-    } else if (state.player2 >= 21 && (state.player2 > state.player1 && scoreDiff(state) >=2)){
+    } else if (state.player2 >= state.winningScore && (state.player2 > state.player1 && scoreDiff(state) >=2)){
         return {...state, winner: 2}
     } else {
         return {...state}
@@ -52,7 +52,13 @@ const reducer = (state, action) => {
         case "addPointP2": return history(playerWin(setServer(p2(state))));
         case "reset": return {...initial, history: state.history};
         case "resetTotal": return {...initial};
-        case "startGame" : return {...initial, gameStarted: true};
+        case "startGame" : return {...initial,
+            gameStarted: true,
+            p1Name: action.p1Name,
+            p2Name: action.p2Name,
+            winningScore: action.winningScore,
+            alternateEvery: action.alternateEvery,
+        };
         default: return state;
     }
 }

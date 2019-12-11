@@ -22,8 +22,12 @@ export const handleResetTotal = () => {
     };
 };
 
-export const handleSubmitStart = () => {
+export const handleSubmitStart = (p1Name,p2Name,winningScore, alternateEvery) => {
     return {
         type: "startGame",
+        p1Name: p1Name,
+        p2Name: p2Name,
+        winningScore: winningScore,
+        alternateEvery: alternateEvery,
     }
 }
