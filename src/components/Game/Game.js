@@ -15,17 +15,15 @@ const Game = ({
                 {/* scores */}
                 <div className="row mb-4">
                     <Player1 
-                        number="1"
                     />
-                    <Player2
-                        number="2" 
+                    <Player2 
                     />
                 </div>
                 { /* winner message */}
                 <Winner />
                 { /* reset button */}
                 <Reset  text="Re-Match"/>
-                <ResetAll text="Reset All"/>
+                <ResetAll text="Restart"/>
                 { /* History Table */ }
                 <History />
         </div>

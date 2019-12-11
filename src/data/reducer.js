@@ -50,7 +50,14 @@ const reducer = (state, action) => {
     switch (action.type){
         case "addPointP1": return history(playerWin(setServer(p1(state))));
         case "addPointP2": return history(playerWin(setServer(p2(state))));
-        case "reset": return {...initial, history: state.history};
+        case "reset": return {...initial,
+            history: state.history,
+            gameStarted: true,
+            p1Name: state.p1Name,
+            p2Name: state.p2Name,
+            winningScore: state.winningScore,
+            alternateEvery: state.alternateEvery,
+        };
         case "resetTotal": return {...initial};
         case "startGame" : return {...initial,
             gameStarted: true,
