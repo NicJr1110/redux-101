@@ -1,9 +1,10 @@
 import React from "react";
-import ResetButton from "./ResetButton";
-import History from "./History/index";
-import Player1 from "./Score/Player1";
-import Player2 from "./Score/Player2";
-import Winner from "./Winner/index";
+import ResetButton from "./components/ResetButton";
+import History from "./components/History/";
+import Player1 from "./components/Score/Player1";
+import Player2 from "./components/Score/Player2";
+import Winner from "./components/Winner/";
+import Header from "./components/Header/Header";
 
 
 const App = ({
@@ -16,9 +17,7 @@ const App = ({
 }) => (
     <React.Fragment>
         {/* header */}
-        <header className="jumbotron mt-4 mb-0">
-            <h1>PongPing</h1>
-        </header>
+        <Header>NingNortong: The Ultimate Showdown</Header>
 
         {/* scores */}
         <div className="row mb-4">
@@ -36,9 +35,12 @@ const App = ({
         <Winner />
 
         { /* reset button */}
-        <ResetButton handleClick={ handleReset } text="Re-Match"/>
+        <div className="well">
+            <ResetButton handleClick={ handleReset } text="Re-Match"/>
+            <ResetButton handleClick={ handleResetTotal } text="Reset All"/>
+        </div>
         <History />
-        <ResetButton handleClick={ handleResetTotal } text="Reset All"/>
+        
     </React.Fragment>
 );
 
