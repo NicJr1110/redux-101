@@ -1,5 +1,6 @@
 import React from "react";
-import ResetButton from "./ResetButton";
+import Reset from "./ResetButtons/Reset";
+import ResetAll from "./ResetButtons/ResetAll";
 import History from "./History/";
 import Player1 from "./Score/Player1";
 import Player2 from "./Score/Player2";
@@ -7,18 +8,10 @@ import Winner from "./Winner/";
 import Header from "./Header/Header";
 
 
-const App = ({
-    handleClickP1,
-    handleClickP2,
-    handleReset,
-    handleResetTotal,
-    
-
-}) => (
+const App = () => (
     <React.Fragment>
         {/* header */}
         <Header>NongNing: The Ultimate Showdown</Header>
-
         {/* scores */}
         <div className="row mb-4">
             <Player1 
@@ -29,17 +22,12 @@ const App = ({
             />
         </div>
         { /* winner message */}
-        
         <Winner />
-
         { /* reset button */}
-        
-        <ResetButton handleClick={ handleReset } text="Re-Match"/>
-        <ResetButton handleClick={ handleResetTotal } text="Reset All"/>
-       
+        <Reset  text="Re-Match"/>
+        <ResetAll text="Reset All"/>
         { /* History Table */ }
         <History />
-        
     </React.Fragment>
 );
 
