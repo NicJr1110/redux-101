@@ -52,6 +52,12 @@ class Settings extends Component{
         let { handleSubmitStart } = this.props;
         let { p1Name, p2Name, winningScore, alternateEvery } = this.state;
         handleSubmitStart(p1Name, p2Name, winningScore, alternateEvery);
+        this.setState({
+            p1Name: "",
+            p2Name: "",
+            winningScore: 21,
+            alternateEvery:5,
+        })
     }
 
 
