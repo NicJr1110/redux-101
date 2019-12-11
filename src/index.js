@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import App from './components/App';
 import { createStore, compose } from "redux";
 import persistState from "redux-localstorage";
 import initial from "./data/initial";
