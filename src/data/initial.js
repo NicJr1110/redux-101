@@ -9,6 +9,7 @@ const initial = {
     winningScore: 21,
     alternateEvery: 5,
     history: [],
+    german: false,
     
 };
 

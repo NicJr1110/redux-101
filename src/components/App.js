@@ -1,15 +1,12 @@
 import React from "react";
-import Header from "./Header/Header";
+import Header from "./Header/";
 import Settings from "./Settings/";
 import Game from "./Game/";
-
-
-
 
 const App = () => (
     <React.Fragment>
         {/* header */}
-        <Header>NongNing: The Ultimate Showdown</Header>
+        <Header />
         { /* Setting */ }
         <Settings />
         {/* Game Board */}

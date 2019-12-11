@@ -42,7 +42,11 @@ const history = state => {
     } else {
         return{...state}
     }
-}
+};
+
+const setLanguage = state => {
+    return {...state, german: !state.german}
+};
 
 
 
@@ -57,15 +61,20 @@ const reducer = (state, action) => {
             p2Name: state.p2Name,
             winningScore: state.winningScore,
             alternateEvery: state.alternateEvery,
+            german: state.german,
         };
-        case "resetTotal": return {...initial};
+        case "resetTotal": return {...initial,
+            german: state.german,
+        };
         case "startGame" : return {...initial,
             gameStarted: true,
             p1Name: action.p1Name,
             p2Name: action.p2Name,
             winningScore: action.winningScore,
             alternateEvery: action.alternateEvery,
+            german: state.german,
         };
+        case "changeLanguage": return setLanguage(state);
         default: return state;
     }
 }

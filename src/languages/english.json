@@ -1,0 +1,20 @@
+{
+    "switch": "German",
+    "title" : "NingNong: The Ultimate Showdown",
+    "player1" : "Player 1",
+    "player2": "Player 2",
+    "serving": "Serving",
+    "reset": "Reset",
+    "rematch": "Rematch",
+    "player1_wins": "Player { winner } wins",
+    "player2_wins": "Player { winner } wins",
+    "setupGame" : "Game Information",
+    "player1_name": "Player 1 Name",
+    "player2_name": "Player 1 Name",
+    "player1_placeholder": "Please enter player 1 name",
+    "player2_placeholder": "Please enter player 2 name",
+    "winningScore": "Winning Score",
+    "altEvery": "Alternate serve every",
+    "start": "Start"
+}
+

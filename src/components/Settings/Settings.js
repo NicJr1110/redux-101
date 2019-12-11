@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import germanLang from '../../languages/german';
+import englishLang from '../../languages/english';
+
 
 class Settings extends Component{
     constructor(props){
@@ -11,6 +14,7 @@ class Settings extends Component{
             p2Name: props.p2Name,
             winningScore: props.winningScore,
             alternateEvery: props.alternateEvery,
+        
             
         }
         
@@ -51,56 +55,60 @@ class Settings extends Component{
 
         let { handleSubmitStart } = this.props;
         let { p1Name, p2Name, winningScore, alternateEvery } = this.state;
-        handleSubmitStart(p1Name, p2Name, winningScore, alternateEvery);
+        
+        handleSubmitStart(p1Name, p2Name, +winningScore,+alternateEvery);
         this.setState({
             p1Name: "",
             p2Name: "",
             winningScore: 21,
             alternateEvery:5,
         })
+        
     }
 
 
     render(){
         let { p1Name, p2Name, winningScore, alternateEvery } = this.state;
-        let { gameStarted } = this.props;
+        let { gameStarted,german } = this.props;
         return(
             <>
                 { gameStarted ? null :   
                 <div className ="container">
-                    <h1> Setup Game </h1>
+                    <h1> { !german ? englishLang.setupGame : germanLang.setupGame }</h1>
                     <Form onSubmit={ this.handleSubmit }>
                         <Form.Group controlId="formGroupPlayer2">
-                            <Form.Label>Player 1 Name</Form.Label>
+                            <Form.Label>{ !german ? englishLang.player1_name : germanLang.player1_name }</Form.Label>
                             <Form.Control 
                                 onChange = { this.handleChangeP1Name }
                                 type="text" 
-                                placeholder="Enter Player 1 name" 
+                                placeholder={ !german ? englishLang.player1_placeholder : germanLang.player1_placeholder }
                                 value={ p1Name }
                                 required 
                             />
                         </Form.Group>
                         <Form.Group controlId="formGroupPlayer2">
-                            <Form.Label>Player 2 Name</Form.Label>
+                            <Form.Label>{ !german ? englishLang.player2_name : germanLang.player2_name }</Form.Label>
                             <Form.Control 
                                 onChange={ this.handleChangeP2Name }
                                 type="text" 
-                                placeholder="Enter Player 2 name"
+                                placeholder={ !german ? englishLang.player2_placeholder : germanLang.player2_placeholder }
                                 value = { p2Name } 
                                 required 
                             />
                         </Form.Group>
                         <Form.Group>
-                            <Form.Label>Winning Score</Form.Label>
+                            <Form.Label>{ !german ? englishLang.winningScore : germanLang.winningScore }</Form.Label>
                             <Form.Control 
                                 onChange={ this.handleWinningScore }
                                 type="integer" 
-                                value={ winningScore } 
+                                min="1"
+                                value={ winningScore }
+                                
                                 
                             />
                         </Form.Group>
                         <Form.Group>
-                            <Form.Label>Alternate Every</Form.Label>
+                            <Form.Label>{ !german ? englishLang.altEvery : germanLang.altEvery }</Form.Label>
                             <Form.Control 
                                 as="select"
                                 onChange={ this.handleAlternateEvery }
@@ -113,7 +121,7 @@ class Settings extends Component{
                             </Form.Control>
                         </Form.Group>
                         <Button variant="primary" type="submit">
-                            Start Game
+                            { !german ? englishLang.start : germanLang.start }
                         </Button>
                     </Form>
                 </div>

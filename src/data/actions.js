@@ -31,3 +31,9 @@ export const handleSubmitStart = (p1Name,p2Name,winningScore, alternateEvery) =>
         alternateEvery: alternateEvery,
     }
 }
+
+export const handleLanguage = () => {
+    return {
+        type: "changeLanguage",
+    }
+}
