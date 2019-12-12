@@ -1,9 +1,10 @@
 import { connect } from 'react-redux';
 import History from "./History";
 
-const mapStateToProps = ({ history }) => {
+const mapStateToProps = ({ history, german }) => {
     return {
         games: history,
+        german
     }
 };
 

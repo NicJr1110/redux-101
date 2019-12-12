@@ -6,8 +6,8 @@
     "serving": "Serving",
     "reset": "Reset",
     "rematch": "Rematch",
-    "player1_wins": "Player { winner } wins",
-    "player2_wins": "Player { winner } wins",
+    "player1_wins": "Player x wins",
+    "player2_wins": "Player x wins",
     "setupGame" : "Game Information",
     "player1_name": "Player 1 Name",
     "player2_name": "Player 1 Name",
@@ -15,6 +15,7 @@
     "player2_placeholder": "Please enter player 2 name",
     "winningScore": "Winning Score",
     "altEvery": "Alternate serve every",
-    "start": "Start"
+    "start": "Start",
+    "game": "Game"
 }
 

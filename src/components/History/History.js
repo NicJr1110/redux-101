@@ -1,14 +1,14 @@
 import React from 'react';
+import germanLang from '../../languages/german';
+import englishLang from '../../languages/english';
 
-
-
-const History = ({ games }) => (
+const History = ({ games,german }) => (
    <table className ="table">
          <thead>
             <tr>
-               <th>Game</th>
-               <th>Player 1</th>
-               <th>Player 2</th>
+               <th>{!german ? englishLang.game : germanLang.game }</th>
+               <th>{!german ? englishLang.player1 : germanLang.player1 }</th>
+               <th>{!german ? englishLang.player2 : germanLang.player2 }</th>
             </tr>
          </thead>
          <tbody>

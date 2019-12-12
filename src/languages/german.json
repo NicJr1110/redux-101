@@ -6,8 +6,8 @@
     "serving": "Aufschlager",
     "reset": "Zurucksetzen",
     "rematch": "Ruckkampf",
-    "player1_wins": "Spieler { winner } gewinnt",
-    "player2_wins": "Spieler { winner } gewinnt",
+    "player1_wins": "Spieler x gewinnt",
+    "player2_wins": "Spieler x gewinnt",
     "setupGame" : "Spiel Information",
     "player1_name": "Spieler 1 Name",
     "player2_name": "Spieler 1 Name",
@@ -15,5 +15,6 @@
     "player2_placeholder": "Geben Sie den Namen von Spieler 2 ein",
     "winningScore": "Gewinnergebnis ",
     "altEvery": "Wechsle jeden",
-    "start": "Anfang"
+    "start": "Anfang",
+    "game": "Spiel"
 }

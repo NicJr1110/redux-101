@@ -6,7 +6,7 @@ const Winner = ({
     winner,
     german,
 }) => (
-    winner > 0 ? <h2 className="alert alert-success">{ !german ? englishLang.player1_wins : germanLang.player1_wins }</h2> : null
+    winner > 0 ? <h2 className="alert alert-success">{ !german ? englishLang.player1_wins.replace(/x/g, winner) : germanLang.player1_wins.replace(/x/g, winner ) }</h2> : null
 )
 
 export default Winner;
