@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { handleResetTotal } from '../../data/actions';
+import { handleResetTotal } from '../../data/actions/actions';
 import ResetButton from "./ResetButton";
 
 

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { handleClickP1 } from '../../data/actions';
+import { handleClickP1 } from '../../data/actions/actions';
 import Score from "./Score";
 
 const mapStateToProps = ({ winner,server1,player1, p1Name, german }) => {

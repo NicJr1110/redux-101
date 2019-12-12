@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Settings from "./Settings";
-import { handleSubmitStart } from "../../data/actions"
+import { handleSubmitStart } from "../../data/actions/actions"
 
 const mapStateToProps = ({ p1Name, p2Name,winningScore,alternateEvery,gameStarted,german }) => {
     return {

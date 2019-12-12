@@ -7,12 +7,13 @@ import Player2 from "../Score/Player2";
 import Winner from "../Winner";
 import germanLang from '../../languages/german';
 import englishLang from '../../languages/english';
+import Loading from '../Loading/';
 
 const Game = ({
     gameStarted,
     german
 }) => (
-    <>  
+    <Loading>  
         { !gameStarted ? "" : 
         <div className="container">
                 {/* scores */}
@@ -31,7 +32,7 @@ const Game = ({
                 <History />
         </div>
         }
-    </>
+    </Loading>
 )
 
 export default Game;
