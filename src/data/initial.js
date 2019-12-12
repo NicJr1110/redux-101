@@ -11,6 +11,7 @@ const initial = {
     alternateEvery: 5,
     history: [],
     german: false,
+    id: "",
     
 };
 

@@ -3,7 +3,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import germanLang from '../../languages/german';
 import englishLang from '../../languages/english';
-import Loading from '../Loading/';
+
 
 
 class Settings extends Component{
@@ -54,10 +54,10 @@ class Settings extends Component{
     handleSubmit(e){
         e.preventDefault();
 
-        let { handleSubmitStart } = this.props;
-        let { p1Name, p2Name, winningScore, alternateEvery } = this.state;
+        let { handleCreateGame } = this.props;
+        let { p1Name, p2Name, winningScore, alternateEvery, id } = this.state;
         
-        handleSubmitStart(p1Name, p2Name, +winningScore,+alternateEvery);
+        handleCreateGame(p1Name,p2Name, +winningScore,+alternateEvery, id);
         this.setState({
             p1Name: "",
             p2Name: "",
@@ -72,7 +72,7 @@ class Settings extends Component{
         let { p1Name, p2Name, winningScore, alternateEvery } = this.state;
         let { gameStarted,german } = this.props;
         return(
-            <Loading>
+            <>
                 { gameStarted ? null :   
                 <div className ="container">
                     <h1> { !german ? englishLang.setupGame : germanLang.setupGame }</h1>
@@ -127,7 +127,7 @@ class Settings extends Component{
                     </Form>
                 </div>
                 }   
-            </Loading>
+            </>
         )
     }
 };

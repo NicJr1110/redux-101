@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { handleClickP2 } from '../../data/actions/actions';
+import { handleAddPointP2 } from '../../data/actions/api';
 import Score from "./Score";
 
 const mapStateToProps = ({ winner,server1,player2,p2Name,german })=>{
@@ -14,7 +14,7 @@ const mapStateToProps = ({ winner,server1,player2,p2Name,german })=>{
 
 const mapDispatchToProps = dispatch => {
     return {
-        handleClick: () => dispatch(handleClickP2()),
+        handleClick: () => dispatch(handleAddPointP2()),
     };
 };
 

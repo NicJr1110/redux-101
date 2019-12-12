@@ -8,7 +8,8 @@ const Score = ({
     player,
     winner,
     handleClick,
-    german
+    german,
+    
 }) => (
     <div className="col-md-6 mt-4">
         <div className={ "card text-center" + (
